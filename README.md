@@ -1,5 +1,16 @@
 # SDSS-Datathon
-We will succeed
+
+### Data Analysis Key Findings
+*   The notebook's primary purpose is data analysis for airline models, using data initially loaded from `https://github.com/Speeb04/SDSS-Datathon/raw/refs/heads/main/Resources/Cases/Airline%20Tickets/airline_ticket_dataset.csv`.
+*   Data preprocessing involved cleaning city names by removing the suffix ' (Metropolitan Area)' from `city1` and `city2` columns for standardization, and identifying unique cities and carrier types.
+*   Feature engineering included the creation of boolean indicators: `city1_is_hub`, `city2_is_hub` (for hub cities), `carrier_lg_is_full_service`, and `carrier_low_is_low_cost` (for carrier types).
+*   Population data (2020-2024 estimates) was successfully integrated into the dataset for `city1` and `city2` using a lookup table (`pop_lut`) and the `addPOP` function.
+*   An attempt to integrate GDP data (2001-2018) encountered significant challenges, resulting in a large number of 'N/A' values after `GeoName` standardization, indicating difficulties in matching city names from the GDP dataset with those in the main DataFrame.
+
+### Insights or Next Steps
+*   The significant 'N/A' values encountered during GDP data integration highlight a need for more robust city name matching or alternative geographic data sources to effectively incorporate economic indicators.
+*   The comprehensive data preparation, including cleaning, feature engineering, and partial external data integration, provides a solid foundation for building and training machine learning models to predict various airline-related outcomes, such as ticket prices or passenger demand.
+
 
 # Airfare Prediction Notebook
 
